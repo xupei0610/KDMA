@@ -83,7 +83,6 @@ def main():
     print(model)
 
     criterion = lambda y_, y: (y - y_).square().sum(1)
-    criterion_ = torch.nn.MSELoss(reduction="sum")
     max_epochs = epoch+config.EXPERT_EPOCHS
     for epoch in range(epoch, max_epochs):
         training_loss, val_loss, val_error = 0., 0., 0.
