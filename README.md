@@ -10,7 +10,7 @@ Comparisons of human trajectories collected by motion capture (Reference), our a
 |-----------|------|-----------|------|
 | ![](gallery/c6_ref.gif) | ![](gallery/c6_ours.gif) | ![](gallery/c6_rl.gif) | ![](gallery/c6_orca.gif) |
 | ![](gallery/c12_1_ref.gif) | ![](gallery/c12_1_ours.gif) | ![](gallery/c12_1_rl.gif) | ![](gallery/c12_1_orca.gif) |
-| ![](gallery/c24_1_ref.gif) | ![](gallery/c24_1_ours.gif) | ![](gallery/c24_1_rl.gif) | ![](gallery/c24_1_orca.gif) |
+| ![](gallery/c24_3_ref.gif) | ![](gallery/c24_3_ours.gif) | ![](gallery/c24_3_rl.gif) | ![](gallery/c24_3_orca.gif) |
 | ![](gallery/c24_4_ref.gif) | ![](gallery/c24_4_ours.gif) | ![](gallery/c24_4_rl.gif) | ![](gallery/c24_4_orca.gif) |
 
 
