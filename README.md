@@ -1,6 +1,6 @@
 # Human-Inspired Multi-Agent Navigation using Knowledge Distillation
 
-This is the code repository to support the paper _Human-Inspired Multi-Agent Navigation using Knowledge Distillation_.
+This is the code repository to support the paper [Human-Inspired Multi-Agent Navigation using Knowledge Distillation](https://arxiv.org/abs/2103.10000).
 
 _**Abstract**_ -- Despite significant advancements in the field of multi-agent navigation, agents still lack the sophistication and intelligence that humans exhibit in multi-agent settings. In this paper, we propose a framework for learning a human-like general collision avoidance policy for agent-agent interactions in fully decentralized, multi-agent environments. Our approach uses knowledge distillation with reinforcement learning to shape the reward function based on expert policies extracted from human trajectory demonstrations through behavior cloning. We show that agents trained with our approach can take human-like trajectories in collision avoidance and goal-directed steering tasks not provided by the demonstrations, outperforming the experts as well as learning-based agents trained without knowledge distillation. 
 
