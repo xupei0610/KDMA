@@ -264,7 +264,6 @@ def as_pytorch_dataset(interpolation=False, **kwargs):
                                     data[nid][t]["vx"] - f["vx"], data[nid][t]["vy"] - f["vy"]
                                 ))
                             a = (f["vx_"], f["vy_"])
-                            ref_a = ((f["gvx"]-f["vx"])/dt, (f["gvy"]-f["vy"])/dt)
                             vx, vy = f["vx"], f["vy"]
                             dpx, dpy = f["gx"]-f["x"], f["gy"]-f["y"] 
                             ref_a = (dpx, dpy, vx, vy)
