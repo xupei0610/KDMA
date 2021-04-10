@@ -137,9 +137,9 @@ def evaluate(
             while not finished:
                 if os.path.exists(agent.checkpoint_file):
                     try:
-                        ckpt = torch.load(agent.checkpoint_file)
-                    except:
-                        pass
+                        ckpt = torch.load(agent.checkpoint_file, map_location=agent.device)
+                    except Exception as e:
+                        print("Evaluator Error: ", e)
                     if ckpt:
                         agent.load_state_dict(ckpt)
                         step = agent.global_step.item()
