@@ -14,6 +14,9 @@ Comparisons of human trajectories collected by motion capture (Reference), our a
 | ![](gallery/c24_4_ref.gif) | ![](gallery/c24_4_ours.gif) | ![](gallery/c24_4_rl.gif) | ![](gallery/c24_4_orca.gif) |
 
 
+## Acknowledgement
+
+This work was supported in part by the National Science Foundationunder Grant No. IIS-2047632 and by an Amazon Research Award.
 
 ## Dependencies
 
