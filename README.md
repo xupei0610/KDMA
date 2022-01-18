@@ -50,12 +50,12 @@ Our training has two stages: (1) train the expert policy by behavior cloning thr
 
 We, by default, use DPPO with 8 workers. To run workers on different machines, use the option of `--master_addr` and `--master_port`. Thread with rank 0 is the chief (master) worker.
 
-    $ python train_policy.py --rank 0 --world_size 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
-    $ python train_policy.py --rank 1 --world_size 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
-    $ python train_policy.py --rank 2 --world_size 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
-    $ python train_policy.py --rank 3 --world_size 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
-    $ python train_policy.py --rank 4 --world_size 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
-    $ python train_policy.py --rank 5 --world_size 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
-    $ python train_policy.py --rank 6 --world_size 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
-    $ python train_policy.py --rank 7 --world_size 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
+    $ python train_policy.py --rank 0 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
+    $ python train_policy.py --rank 1 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
+    $ python train_policy.py --rank 2 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
+    $ python train_policy.py --rank 3 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
+    $ python train_policy.py --rank 4 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
+    $ python train_policy.py --rank 5 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
+    $ python train_policy.py --rank 6 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
+    $ python train_policy.py --rank 7 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
 
