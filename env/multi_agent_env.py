@@ -258,4 +258,4 @@ class DecentralizedMultiAgentEnv():
 
 
         fig.canvas.draw()
-
+        plt.pause(0.0001)
