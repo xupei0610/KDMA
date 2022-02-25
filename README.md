@@ -1,6 +1,8 @@
 # Human-Inspired Multi-Agent Navigation using Knowledge Distillation
 
-This is the code repository to support the paper _[Human-Inspired Multi-Agent Navigation using Knowledge Distillation](https://arxiv.org/abs/2103.10000)_.
+This is the code repository to support the paper _**Human-Inspired Multi-Agent Navigation using Knowledge Distillation**. [[arXiv](https://arxiv.org/abs/2103.10000)]
+
+This paper has been accepted by 2021 *IEEE International Workshop on Intelligent Robots and Systems (IROS)*.
 
 _**Abstract**_ -- Despite significant advancements in the field of multi-agent navigation, agents still lack the sophistication and intelligence that humans exhibit in multi-agent settings. In this paper, we propose a framework for learning a human-like general collision avoidance policy for agent-agent interactions in fully decentralized, multi-agent environments. Our approach uses knowledge distillation with reinforcement learning to shape the reward function based on expert policies extracted from human trajectory demonstrations through behavior cloning. We show that agents trained with our approach can take human-like trajectories in collision avoidance and goal-directed steering tasks not provided by the demonstrations, outperforming the experts as well as learning-based agents trained without knowledge distillation. 
 
@@ -59,3 +61,14 @@ We, by default, use DPPO with 8 workers. To run workers on different machines, u
     $ python train_policy.py --rank 6 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
     $ python train_policy.py --rank 7 --workers 8 --device cuda:0 --expert <expert_log_dir> --log_dir <policy_log_dir> &
 
+## Citation
+    @inproceedings{kdma,
+        author={Xu, Pei and Karamouzas, Ioannis},
+        booktitle={2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+        title={Human-Inspired Multi-Agent Navigation using Knowledge Distillation}, 
+        year={2021},
+        volume={},
+        number={},
+        pages={8105-8112},
+        doi={10.1109/IROS51168.2021.9636463}
+    }
