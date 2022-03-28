@@ -2,7 +2,7 @@ import os
 import torch
 
 from typing import Callable
-from ..agent import Hook
+from .agent import Hook
 
 
 def worker_name(rank: int):
