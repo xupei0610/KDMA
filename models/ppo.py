@@ -29,7 +29,7 @@ class MultiAgentPPO(PPO):
             if max_len > len(entry["state"]):
                 entry["state"] = numpy.pad(entry["state"], (0, max_len-len(entry["state"])))
         return {
-            k: torch.tensor([e[k] for e in batch]) for k, v in entry.items()
+            k: torch.tensor(numpy.array([e[k] for e in batch])) for k, v in entry.items()
         }
 
 
