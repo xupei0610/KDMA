@@ -70,7 +70,13 @@ def seed(seed: int, env=None):
     torch.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
-    torch.set_deterministic(True)
+    try:
+        torch.set_deterministic(True)
+    except AttributeError:
+        try:
+            torch.use_deterministic_algorithms(True)
+        except AttributeError:
+            pass
     if env is not None:
         env_seed(env, seed)
 
