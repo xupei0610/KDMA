@@ -35,27 +35,21 @@ class DLAgent(BaseAgent):
                 self.velocity.x, self.velocity.y,
                 0., 0., 0., 0. # dummy neighbor representing agent itself
             ] + n
-           
-        if not self.model or self.model.agent_dim == 3: # goal-direction alignment by default
-            heading = numpy.arctan2(dpy, dpx)
-            c = numpy.cos(-heading)
-            s = numpy.sin(-heading)
-            R = numpy.asarray([
-                [c, -s],
-                [s,  c]
-            ])
-            if n: n = (R @ numpy.array(n).reshape(-1, 2, 1)).reshape(-1).tolist()
-            v = R @ [self.velocity.x, self.velocity.y]
-            if dist > self.observe_radius: dist = self.observe_radius
-            ob = [
-                dist, v[0], v[1],
-                0., 0., 0., 0.
-            ] + n
-        else:
-            ob = [
-                dpx, dpy, self.velocity.x, self.velocity.y,
-                0., 0., 0., 0.
-            ] + n
+                   
+        heading = numpy.arctan2(dpy, dpx)
+        c = numpy.cos(-heading)
+        s = numpy.sin(-heading)
+        R = numpy.asarray([
+            [c, -s],
+            [s,  c]
+        ])
+        if n: n = (R @ numpy.array(n).reshape(-1, 2, 1)).reshape(-1).tolist()
+        v = R @ [self.velocity.x, self.velocity.y]
+        if dist > self.observe_radius: dist = self.observe_radius
+        ob = [
+            dist, v[0], v[1],
+            0., 0., 0., 0.
+        ] + n
         return ob
 
     def act(self, s, env):
@@ -71,17 +65,15 @@ class DLAgent(BaseAgent):
         else:
             raise ValueError
 
-        if not self.model or self.model.agent_dim == 3: # goal-direction alignment by default
-            dp = self.goal.x-self.position.x, self.goal.y-self.position.y
-            heading = numpy.arctan2(dp[1], dp[0])
-            c = numpy.cos(heading)
-            s = numpy.sin(heading)
-            R = numpy.asarray([
-                [c, -s],
-                [s,  c]
-            ])
-            a = R @ a
-            
+        dp = self.goal.x-self.position.x, self.goal.y-self.position.y
+        heading = numpy.arctan2(dp[1], dp[0])
+        c = numpy.cos(heading)
+        s = numpy.sin(heading)
+        R = numpy.asarray([
+            [c, -s],
+            [s,  c]
+        ])
+        a = R @ a
         vx_, vy_ = a[0], a[1]
         return [(vx_-self.velocity[0])*env.fps, (vy_-self.velocity[1])*env.fps]
     
