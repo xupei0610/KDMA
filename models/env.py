@@ -45,15 +45,19 @@ class Env(DecentralizedMultiAgentEnv):
             return r
         r = 0
 
+        vx = (agent.position.x - self.position[idx][0])*self.fps
+        vy = (agent.position.y - self.position[idx][1])*self.fps
+
         dt = 1./self.fps
         v_pref = agent.preferred_velocity(dt, start=self.position[idx])
         agent.vpref = v_pref
-        e0 = ((v_pref[0]-agent.velocity.x)**2+(v_pref[1]-agent.velocity.y)**2)**0.5
+        e0 = ((v_pref[0]-vx)**2+(v_pref[1]-vy)**2)**0.5
         agent.vr = 0.02*numpy.exp(-0.85*e0)
         r += agent.vr
         if hasattr(agent, "expert") and agent.expert:
-            a_expert = agent.expert_act(self)
-            a = self.action[idx]
+            a_expert = agent.expert_act(self) # the output of expert is the acceleration
+            vx_, vy_ = self.velocity[idx]
+            a = (vx - vx_)*self.fps, (vy - vy_)*self.fps
             if hasattr(a_expert[0], "__len__"):
                 e1 = 0
                 for expert in a_expert:
