@@ -78,15 +78,18 @@ def train(seed, rank, hooks=[]):
     agent = agent_wrapper(None, rank, hooks)
     agent.init()
 
-    expert = ExpertNetwork(agent_dim=4, neighbor_dim=4, out_dim=2)
-    if os.path.isdir(settings.expert):
-        expert_ckpt = os.path.join(settings.expert, "ckpt")
+    if settings.expert:
+        expert = ExpertNetwork(agent_dim=4, neighbor_dim=4, out_dim=2)
+        if os.path.isdir(settings.expert):
+            expert_ckpt = os.path.join(settings.expert, "ckpt")
+        else:
+            expert_ckpt = settings.expert
+        ckpt = torch.load(expert_ckpt, map_location="cpu")
+        expert.load_state_dict(ckpt["model"])
+        expert.to(agent.device)
     else:
-        expert_ckpt = settings.expert
-    ckpt = torch.load(expert_ckpt, map_location="cpu")
-    expert.load_state_dict(ckpt["model"])
-    expert.to(agent.device)
-    
+        expert = None
+        
     env = env_wrapper(expert)
     env.seed(seed)
 
