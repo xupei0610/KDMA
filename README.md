@@ -1,6 +1,6 @@
 # Human-Inspired Multi-Agent Navigation using Knowledge Distillation
 
-This is the code repository to support the paper _**Human-Inspired Multi-Agent Navigation using Knowledge Distillation**. [[arXiv](https://arxiv.org/abs/2103.10000)]
+This is the code repository to support the paper _**Human-Inspired Multi-Agent Navigation using Knowledge Distillation**. [[arXiv](https://arxiv.org/abs/2103.10000)][[Youtube](https://youtu.be/tMctyEw8kRI)]
 
 This paper has been accepted by 2021 *IEEE International Workshop on Intelligent Robots and Systems (IROS)*.
 
